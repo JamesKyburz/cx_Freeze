@@ -69,6 +69,7 @@ class build_ext(distutils.command.build_ext.build_ext):
                 extra_args.append("-Wl,-export_dynamic")
             else:
                 extra_args.append("-s")
+            extra_args.append("-Wl,-rpath,$ORIGIN/lib")
         self.compiler.link_executable(
             objects,
             fullname,
