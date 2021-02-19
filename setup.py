@@ -22,7 +22,7 @@ class build_ext(distutils.command.build_ext.build_ext):
             return
         if WIN32 and self.compiler.compiler_type == "mingw32":
             ext.sources.append("source/bases/manifest.rc")
-        os.environ["LD_RUN_PATH"] = "${ORIGIN}/../lib:${ORIGIN}/lib"
+        #os.environ["LD_RUN_PATH"] = "${ORIGIN}/../lib:${ORIGIN}/lib"
         objects = self.compiler.compile(
             ext.sources,
             output_dir=self.build_temp,
